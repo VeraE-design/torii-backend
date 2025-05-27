@@ -21,13 +21,12 @@ const isLoggedIn = async (req, res, next) => {
     req.user = {
       email: payload.email,
       role: payload.role,
-      userId: payload.userId
+      userId: payload.userId,
     };
     next();
   } catch (error) {
     console.log(error);
-    return res.status(401).json({message: "Authentification Failed"})
-    
+    return res.status(401).json({ message: "Authentification Failed" });
   }
 };
 
@@ -42,7 +41,6 @@ const requirePermissions = (...roles) => {
     }
     next();
   };
-  
 };
 
 module.exports = { isLoggedIn, requirePermissions };
