@@ -1,6 +1,6 @@
 const PROPERTY = require("../models/property");
 const cloudinary = require("cloudinary").v2;
-
+//
 const createProperty = async (req, res) => {
   const { userId } = req.user;
   const {
